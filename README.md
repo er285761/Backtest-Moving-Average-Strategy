@@ -1,33 +1,10 @@
 # Backtest-Moving-Average-Strategy
-This code is a Streamlit application that provides functionalities for backtesting a Moving Average Crossover strategy on stock data. The application allows users to input a stock ticker symbol, retrieve historical stock prices from Yahoo Finance, and analyze the stock's performance using a technical trading strategy.
-Streamlit App Setup
-Libraries Import: The code imports necessary libraries such as streamlit, pandas, numpy, yfinance, matplotlib, and nltk, among others, to handle data processing, visualization, and natural language processing.
+This Streamlit application allows users to backtest a Moving Average Crossover strategy on historical stock data from Yahoo Finance. Users input a stock ticker symbol, a start date, initial capital, and the window sizes for short-term and long-term moving averages. The application calculates these moving averages to determine trading positions and computes strategy returns while factoring in transaction costs and slippage. It displays the historical stock prices, volume trends, buy/sell signals, and key performance metrics such as cumulative returns, win/loss ratio, and profit factor. By visualizing the backtest results and trading metrics, the application provides a detailed analysis of how the moving average crossover strategy would have performed historically.
 
-Streamlit Title and User Inputs:
+The Streamlit application provides an interactive platform for analyzing stocks through various dashboards. Users can choose between 'Fundamental Analysis', 'News', 'Stock Predictions, 'Wikipedia', and 'Reddit' dashboards from the sidebar. Each dashboard is tailored to offer specific insights and data related to a selected stock, enhancing the user's ability to make informed investment decisions. The 'Fundamental Analysis' dashboard gathers comprehensive financial data using the Yahoo Finance API, presenting detailed company information, balance sheets, cash flows, and key financial metrics.
 
-Ticker Symbol: User can input the stock ticker symbol (default is 'TSLA').
-Start Date: User can input the start date for retrieving historical data (default is '2021-01-01').
-Data Retrieval and Display
-Fetching Historical Data:
-The application uses yfinance to fetch historical stock data for the given ticker symbol and start date.
-The fetched data is displayed as a DataFrame and also as line charts showing historical closing prices and volume trends.
-Moving Average Crossover Strategy
-User Inputs for Strategy Parameters:
-Initial Capital: The amount of initial capital for the backtest.
-Short-term and Long-term Moving Averages: User inputs for the window sizes of the moving averages.
-Backtesting Function
-Backtest Function Definition:
-backtest_ma_crossover_strategy(df, short_ma_window, long_ma_window, initial_capital, transaction_cost_percentage, slippage_percentage):
-Calculate Moving Averages: The short-term and long-term moving averages are calculated.
-Position Calculation: Positions (buy/sell/hold) are determined based on the moving averages.
-Strategy Returns: Strategy returns are calculated based on daily returns and the position held.
-Transaction Costs and Slippage: These costs are incorporated into the backtest to make it realistic.
-Performance Metrics: Various performance metrics such as cumulative returns, win/loss ratio, profit factor, and risk/reward ratio are computed.
-Visualizations:
-A combined chart showing closing prices, moving averages, and buy/sell signals.
-Cumulative profits and losses.
-Cumulative returns with trading costs.
-Trading Metrics: Display of total winning trades, losing trades, total trade values, and remaining capital.
-Final Outputs
-Displaying Results: The results of the backtest, including charts and performance metrics, are displayed using Streamlit's st.write and st.pyplot functions.
-The application provides a comprehensive tool for backtesting a moving average crossover strategy, allowing users to understand how the strategy would have performed historically, including the impact of transaction costs and slippage.
+The 'News' dashboard integrates with the News API to fetch and display the latest news articles about the selected stock. This section supplements the financial data with current events and media coverage, helping users understand the market sentiment and potential impacts on stock performance. Basic stock information, such as industry, sector, and market capitalization, is also displayed to provide context for the news articles.
+
+The 'Stock Predictions' dashboard leverages historical stock price data and a pre-trained machine learning model to forecast future stock prices. It includes visualizations of historical prices, moving averages, and volume trends. Additionally, the dashboard evaluates prediction performance using metrics like Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R2 Score. Users can also view the model's predicted stock price for the next day, offering a data-driven approach to anticipate stock movements.
+
+Lastly, the 'Wikipedia' dashboard retrieves and displays Wikipedia content related to the selected stock, providing a comprehensive company background. Basic stock information is also shown to give users a quick overview of the company's sector and market presence. While the 'Reddit' dashboard is currently a placeholder, it is intended to aggregate and display discussions from Reddit, offering insights into public sentiment and community discussions about the stock. This multi-faceted approach ensures that users have access to diverse sources of information, combining historical data, current news, expert predictions, and community insights to make well-rounded investment decisions.
